@@ -1,0 +1,35 @@
+{
+  "name": "ads",
+  "version": "1.0.0",
+  "description": "Agro-Input disbursement system. design with the intent of keeping a track record of each farm input supplied to farmers  ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "engines": {
+    "node": "12.18.4"
+  },
+  "author": "ibrahim yusuf",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "compression": "^1.7.4",
+    "config": "^3.3.3",
+    "cookie-parser": "^1.4.5",
+    "debug": "^4.3.1",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "helmet": "^4.2.0",
+    "joi": "^17.3.0",
+    "joi-objectid": "^3.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.20",
+    "mongoose": "^5.11.5",
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.6",
+    "winston": "^3.3.3",
+    "winston-mongodb": "^5.0.5"
+  }
+}

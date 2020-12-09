@@ -3,7 +3,6 @@ const { Farmer, validateInput}  = require('../Models/farmerModel');
 const express = require('express');
 const Router = express.Router();
 const multer = require('multer');
-const { Console } = require('winston/lib/winston/transports');
 const upload = multer({dest : 'public/images/users'});
 
 Router.post('/create/farmer', upload.single('profileImage'), async(req,res)=>{
@@ -87,7 +86,7 @@ Router.put('/update/farmer/:id',  upload.single('profileImage'), async(req, res)
 
     
          
-  const farmer =  await Farmer.findOneAndUpdate({$or :[{_id:req.params.id},{_id:req.body.bvn}, ]}, {
+  const farmer =  await Farmer.findOneAndUpdate({$or :[{_id:req.params.id},{bvn:req.body.bvn}, ]}, {
             $set:{
                  ...req.body
             }

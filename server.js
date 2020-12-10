@@ -7,12 +7,14 @@ const Joi = require('joi');
 Joi.objectid = require('joi-objectid')(Joi);
 const config = require('config');
 const serverDebug = require('debug')('App:server');
+const cors = require('cors');
 const express = require('express');
 
 
 
 const app = express();
-
+      app.use(cors());
+    
 require('./startup/db');
 require('./startup/startup')(app);
 

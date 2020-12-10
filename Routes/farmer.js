@@ -105,7 +105,7 @@ Router.put('/update/farmer/:id',  upload.single('profileImage'), async(req, res)
 Router.get('/find/farmers',  async(req, res)=>{
     
     let farmer = await Farmer.find();
-    if(!farmer)  return res.status(409).send("empty farmers");
+    if(!farmer)  return res.status(404).send("empty farmers");
 
     res.json({
         success:true,
@@ -116,7 +116,7 @@ Router.get('/find/farmers',  async(req, res)=>{
 Router.get('/find/farmer/:bvn',  async(req, res)=>{
     
     const farmer = await Farmer.findOne({bvn: req.params.bvn});
-    if(!farmer)  return res.status(409).send("Farmer with the given bvn does not exist!");
+    if(!farmer)  return res.status(404).send("Farmer with the given bvn does not exist!");
 
     res.json({
         success:true,

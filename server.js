@@ -47,6 +47,7 @@ if(!config.get("jwtPrivate")){
 
 const Farmer = require('./Routes/farmer');
 const State = require('./Routes/state'); 
+const Country = require('./Routes/country');
 
 app.use(express.static('public'))
 app.use(express.json());
@@ -56,6 +57,7 @@ app.use(cookieParser());
 
 app.use('/api', Farmer);
 app.use('/api', State);
+app.use('/api', Country);
 
 
 app.use(errorhandler)
